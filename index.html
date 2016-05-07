@@ -284,6 +284,9 @@ elixir.config.js.browserify.transformers.push({
 // da /resources/assets/js/main.js a /public/js/main.js
 mix.browserify('main.js');</code></pre>
 
+</section>
+				<section>
+					<h2>Compilazione Js</h2>
 <h3>Babel</h3>
 <pre><code data-trim >
 //da /resources/assets/js/* a /public/js/all.js (come mix.script!)
@@ -307,7 +310,8 @@ mix.styles([
 
 
 <pre><code data-trim >
-//Compilazione da /resources/assets/js in /public/js/all.js (come mix.babel!)
+//Compilazione da /resources/assets/js in /public/js/all.js
+//(come mix.babel!)
 mix.scripts([
 	'module1.js',
 	'module2.js'
