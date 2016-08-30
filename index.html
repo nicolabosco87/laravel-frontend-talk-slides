@@ -15,7 +15,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/blood.css" id="theme">
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
 
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -43,149 +43,177 @@
 				<section>
 					<h1>Frontend with Laravel <br> <b>Elixir</b></h1>
 					<p>
-						<small>Created by <a href="https://www.facebook.com/boschin87">Nicola Bosco</a> / <a href="https://twitter.com/Jazzy_Tuna">@Jazzy_Tuna</a></small>
+						<small>Created by <a href="https://www.facebook.com/boschin87">Nicola Bosco</a> /
+							<a href="https://twitter.com/Jazzy_Tuna">@Jazzy_Tuna</a></small>
 					</p>
 				</section>
 
 				<section>
-					<h2>Il fantastico mondo del Frontend<span class="fragment" style="color:darkred" >?</span></h2>
+					<h2>Introducing Laravel</h2>
 
-					<ul>
-						<li class="fragment">Compilazione Sass/Less</li>
-						<li class="fragment">Compilazione Js</li>
-						<li class="fragment">Gestione Librerie esterne</li>
-						<li class="fragment">Ottimizzazione richieste</li>
-						<li class="fragment">Ottimizzazione Immagini</li>
-						<li class="fragment">Task Oscuri</li>
-					</ul>
-
-					<h3 class="fragment">Come posso organizzare le risorse/task su Laravel?</h3>
-
-				</section>
-
-				<section>
-					<h2>Elixir</h2>
-					<p>In Laravel tutto è già stato organizzato e pronto all'uso.</p>
-					<img src="img/rainbows.gif" alt="Il mirabilante mondo del Frontend">
-				</section>
-
-
-				<section>
-					<h2>Come funziona Elixir</h2>
-					<p>Elixir si appoggia su <a href="http://gulpjs.com/">Gulp</a> e aggiunge funzionalità dedicate a Laravel</p>
-					<img src="img/gulp.png" alt="">
-					<p>Predispone da subito una struttura degli assets e ha i task più generici già configurati</p>
-				</section>
-
-				<section>
-					<h2>Cosa posso fare con Elixir?</h2>
-
-					<ul>
-						<li class="fragment" >Compilazione css e js (Sass,Less,PostCss,Coffescript,Babel,Browserify)</li>
-						<li class="fragment" >Concatenazione/minificazione css e js</li>
-						<li class="fragment" >Versioning delle risorse</li>
-						<li class="fragment" >Unit testing php/js</li>
-						<li class="fragment" >Ottimizzazione immagini (via gulp)</li>
-						<li class="fragment" >Linting css/js (via gulp)</li>
-						<li class="fragment" >Livereload (via gulp)</li>
-					</ul>
-
-				</section>
-
-				<section>
-					<h2>Esempio flusso di building</h2>
-
-					<div class="fragment">
-						<h4>Compilazione/Concatenazione sass in all.css</h4>
-					</div>
-
-					<div class="fragment">
-						<h3 style="transform: rotate(90deg)">&#10151;</h3>
-						<h4>Autoprefixer</h4>
-					</div>
-
-					<div class="fragment">
-						<h3 style="transform: rotate(90deg)">&#10151;</h3>
-						<h4>Minificazione css</h4>
-					</div>
-
-					<div class="fragment">
-						<h3 style="transform: rotate(90deg)">&#10151;</h3>
-						<h4>Versioning css</h4>
-					</div>
-
-				</section>
-
-				<section>
-					<h2>Come si installa?</h2>
-
-<pre class="fragment" ><code  >npm install</code></pre>
-
-					<p class="center">
-						<img class="fragment" src="http://i.giphy.com/yEtv1wWZpmG2s.gif" alt="">
-					</p>
 					<p>
-						<small class="fragment" >Ci mette un pochino...</small>
+						Laravel è un framework open source di tipo MVC scritto in PHP per lo sviluppo di applicazioni
+						web, creato nel 2011 da Taylor Otwell come derivazione di Symfony.
+					</p>
+
+					<p>
+						Attualmente alla versione 5.3 è uno dei framework PHP più utilizzati al momento.
 					</p>
 				</section>
 
 				<section>
-					<h2>Come si configura?</h2>
+					<h2>Little Laravel overview</h2>
 
-					<div class="fragment">
-						<h3  >Tramite il gulpfile.js</h3>
-						<p>
-							Qua verranno configurati Elixir e tutti i task utilizzati nel progetto.
-						</p>
-					</div>
-					<br>
-					<p class="fragment">
-						Elixir fornisce:
+					<ul>
+						<li>MVC framework with bundles (Packagist)</li>
+						<li>Expressive, intuitive syntax.</li>
+						<li>Eloquent ORM, Querybuilder, Migrations </li>
+						<li>Blade template engine + Elixir/Gulp task runner</li>
+						<li>Excellent Documentation and Laracast tutorials</li>
+					</ul>
+
+					<p>
+						More info at <a href="http://www.laravel.com">www.laravel.com</a>
 					</p>
-					<ul class="fragment">
-						<li>Compilatori sass/less/coffescript/babel/browserify</li>
-						<li>Concatenatori css/js</li>
-						<li>Autoprefixer</li>
-						<li>Versioning</li>
-						<li>PhpUnit Testing</li>
-					</ul>
+
+				</section>
+
+				<section>
+					<h2>A help for Frontend Devs - Elixir</h2>
+					<p>
+						Elixir è un'estensione di <a href="http://gulpjs.com/">Gulp</a> e fornisce
+						una API che semplifica la configurazione del proprio task runner su Laravel.
+					</p>
+				</section>
+
+				<section>
+					<h2>Installation</h2>
+					<p>
+						<pre ><code  >npm install</code></pre>
+					</p>
+
+					<p>
+						E' già presente un package.json per l'installazione iniziale
+					</p>
+				</section>
+
+				<section>
+					<h2>Configuration</h2>
+					<p>
+						Si utilizza il gulpfile.js
+					</p>
+				</section>
+
+				<section>
+					<h2>Configuration</h2>
+
+					<p>gulpfile.js iniziale</p>
+
+<pre><code data-trim >
+const elixir = require('laravel-elixir');
+
+require('laravel-elixir-vue');
+
+/*
+|-----------------------------------------------------------
+| Elixir Asset Management
+|-----------------------------------------------------------
+*/
+
+elixir(mix => {
+	mix.sass('app.scss')
+	.webpack('app.js');
+});
+</code></pre>
+
+				</section>
+
+
+				<section>
+					<h2>Execution</h2>
+
+					<p>
+						<pre><code>gulp</code></pre>
+						<pre><code>gulp --production</code></pre>
+						<pre><code>gulp watch</code></pre>
+					</p>
+				</section>
+
+				<section>
+					<h2>Esecuzione</h2>
+
+					immagine di riepilogo esecuzione task
+				</section>
+
+
+				<section>
+					<h2>Tasks</h2>
+				</section>
+
+				<section>
+					<h2>Working with Css</h2>
+
+					<p>
+						Gli assets css si trovano di default nella cartella <code>/resources/assets/css/</code>.
+					</p>
+
+
+					<h4>SASS</h4>
+					<p>
+
+					</p>
+
+
+				</section>
+
+
+				<section>
+
+					<h2>Working with Css</h2>
+
+					<h4>LESS</h4>
+					<p></p>
+
+					<h4>Stylus</h4>
+					<p></p>
+
+				</section>
+
+
+				<section>
+					<h2>Working with Css</h2>
+
+					<h4>Plain Css</h4>
+					<p></p>
 				</section>
 
 
 
 				<section>
-					<h2>Come sono organizzati gli assets</h2>
+					<h2>Working with Javascipt</h2>
 
-					<ul>
-						<li>Raw Css in /resources/assets/css</li>
-						<li>Raw Sass in /resources/assets/sass</li>
-						<li>Raw Less in /resources/assets/less</li>
-						<li>Raw Js in /resources/assets/js</li>
-					</ul>
+					<p>
+						Un suggerimento di Laravel: Webpack + Vue
+					</p>
 
-					<ul>
-						<li>Public Css in /public/css</li>
-						<li>Public Js in /public/js</li>
-					</ul>
-
-					<p>Si possono comunque aggiungere/modificare le cartelle (es: /resources/assets/vendor/)</p>
+					<p class="text-center">
+						<img src="img/webpack.png" alt="Webpack">
+						<img src="img/vue.png" alt="Vue">
+					</p>
 
 				</section>
+
 
 				<section>
-					<h2>Configurazione di Elixir</h2>
+					<h2>Working with Javascript</h2>
 
-					<h4 class="fragment">Se proprio si vuole modificare la configurazione:</h4>
+					<h4>Webpack</h4>
 
-					<ul class="fragment">
-						<li><b>assetsDir:</b> la path degli assets, di default è resources/assets</li>
-						<li><b>cssOutput:</b> la path di output dei css, di default è public/css</li>
-						<li><b>jsOutput:</b> la path di output dei js, di default è public/js</li>
-						<li><b>sourcemaps:</b> generare la sourcemap? di default è true</li>
-					</ul>
-
+					<p></p>
 
 				</section>
+
+
 
 				<section>
 					<h2>Come si utilizza?</h2>
