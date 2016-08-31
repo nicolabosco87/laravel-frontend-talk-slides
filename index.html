@@ -153,38 +153,48 @@ elixir(mix => {
 				<section>
 					<h2>Working with Css</h2>
 
-					<p>
-						Gli assets css si trovano di default nella cartella <code>/resources/assets/css/</code>.
-					</p>
+					<h3>Sass</h3>
+
+					<p>Singolo file</p>
+<pre><code data-trim >
+	// da /resources/assets/sass/app.scss a /public/css/app.css
+	elixir(function(mix) {
+	mix.sass('app.scss');
+	});</code></pre>
+
+					<p>Files multipli + destinazione css</p>
+<pre><code data-trim >
+	// da /resources/assets/sass/.. a /public/another-css/multiple.css
+	elixir(function(mix) {
+	mix.sass(['app.scss','fixes.scss'],'public/another-css/multiple.css');
+	});</code></pre>
+				</section>
 
 
-					<h4>SASS</h4>
-					<p>
-
-					</p>
 
 
+				<section>
+					<h3>Less</h3>
+<pre><code data-trim >
+	// da /resources/assets/less/app.less a /public/css/app.css
+	elixir(function(mix) {
+	mix.less('app.less');
+	});</code></pre>
+
+					<p>Abbiamo la stessa flessibilità di utilizzo di mix.sass()</p>
 				</section>
 
 
 				<section>
+					<h3>Plain Css</h3>
+<pre><code data-trim >
+	// da /resources/assets/css/.. a /public/css/app.css
+	elixir(function(mix) {
+	mix.styles(['app.css','fixes.css']);
+	});</code></pre>
 
-					<h2>Working with Css</h2>
+					<p>Abbiamo la stessa flessibilità di utilizzo di mix.sass() e mix.less()</p>
 
-					<h4>LESS</h4>
-					<p></p>
-
-					<h4>Stylus</h4>
-					<p></p>
-
-				</section>
-
-
-				<section>
-					<h2>Working with Css</h2>
-
-					<h4>Plain Css</h4>
-					<p></p>
 				</section>
 
 
