@@ -43,10 +43,32 @@
 				<section data-background="#f4645f" >
 					<h1 style="color: white;">Frontend with Laravel <br> <b>Elixir</b></h1>
 					<p style="color: white;" >
-						<small>Created by <a href="https://www.facebook.com/boschin87">Nicola Bosco</a> /
-							<a href="https://twitter.com/Jazzy_Tuna">@Jazzy_Tuna</a></small>
+
+						<div style="border-radius:5px; background: #ffffff; display: flex; align-items: center; justify-content: center;" >
+							<div style="display: inline-block; margin-right: 15px; padding: 0 15px;" >
+								<img width="150" style="border: none; box-shadow: none; " src="img/logo-fevr.png" alt="Fevr">
+							</div>
+
+							<small><a href="https://www.facebook.com/boschin87">Nicola Bosco</a></small>
+
+						</div>
 					</p>
 				</section>
+
+				<section>
+
+					<p style="text-align: center">
+						<div class="photo" style="background-image: url(img/foto.jpg)" ></div>
+					</p>
+
+					<h2>Nicola Bosco</h2>
+
+					<p>
+						Php full-stack developer (with Frontend Attitudes) <br>at Intesys
+					</p>
+
+				</section>
+
 
 				<section>
 					<h2>Introducing Laravel</h2>
@@ -62,7 +84,7 @@
 				</section>
 
 				<section>
-					<h2>Little Laravel overview</h2>
+					<h2>A little Laravel overview</h2>
 
 					<ul>
 						<li>MVC framework with bundles (Packagist)</li>
@@ -79,7 +101,7 @@
 				</section>
 
 				<section>
-					<h2>A help for Frontend Devs - Elixir</h2>
+					<h2>A help for Frontenders - Elixir</h2>
 					<p>
 						Elixir è un'estensione di <a href="http://gulpjs.com/">Gulp</a> e fornisce
 						una API che semplifica la configurazione del proprio task runner su Laravel.
@@ -157,17 +179,17 @@ elixir(mix => {
 
 					<p>Singolo file</p>
 <pre><code data-trim >
-	// da /resources/assets/sass/app.scss a /public/css/app.css
-	elixir(function(mix) {
+// da /resources/assets/sass/app.scss a /public/css/app.css
+elixir(function(mix) {
 	mix.sass('app.scss');
-	});</code></pre>
+});</code></pre>
 
 					<p>Files multipli + destinazione css</p>
 <pre><code data-trim >
-	// da /resources/assets/sass/.. a /public/another-css/multiple.css
-	elixir(function(mix) {
+// da /resources/assets/sass/.. a /public/another-css/multiple.css
+elixir(function(mix) {
 	mix.sass(['app.scss','fixes.scss'],'public/another-css/multiple.css');
-	});</code></pre>
+});</code></pre>
 				</section>
 
 
@@ -176,10 +198,21 @@ elixir(mix => {
 				<section>
 					<h3>Less</h3>
 <pre><code data-trim >
-	// da /resources/assets/less/app.less a /public/css/app.css
-	elixir(function(mix) {
+// da /resources/assets/less/app.less a /public/css/app.css
+elixir(function(mix) {
 	mix.less('app.less');
-	});</code></pre>
+});</code></pre>
+
+					<p>Abbiamo la stessa flessibilità di utilizzo di mix.sass()</p>
+				</section>
+
+				<section>
+					<h3>Stylus</h3>
+					<pre><code data-trim >
+// da /resources/assets/stylus/app.styl a /public/css/app.css
+elixir(function(mix) {
+	mix.stylus('app.styl');
+});</code></pre>
 
 					<p>Abbiamo la stessa flessibilità di utilizzo di mix.sass()</p>
 				</section>
@@ -188,12 +221,12 @@ elixir(mix => {
 				<section>
 					<h3>Plain Css</h3>
 <pre><code data-trim >
-	// da /resources/assets/css/.. a /public/css/app.css
-	elixir(function(mix) {
+// da /resources/assets/css/.. a /public/css/app.css
+elixir(function(mix) {
 	mix.styles(['app.css','fixes.css']);
-	});</code></pre>
+});</code></pre>
 
-					<p>Abbiamo la stessa flessibilità di utilizzo di mix.sass() e mix.less()</p>
+					<p>Abbiamo la stessa flessibilità di utilizzo di mix.sass()</p>
 
 				</section>
 
@@ -215,12 +248,12 @@ elixir(mix => {
 
 
 				<section>
-					<h2>Working with Javascript</h2>
 
-					<h4>Webpack</h4>
+					<h3>Webpack</h3>
 
 					<p>
 						<pre><code data-trim >
+// From resources/assets/js/app.js to public/js/app.js
 elixir(function(mix) {
     mix.webpack('app.js');
 });</code></pre>
@@ -234,12 +267,15 @@ elixir(function(mix) {
 
 
 				<section>
-					<h2>Working with Javascript</h2>
 
 					<h3>Rollup</h3>
 
+
+					<p>"the next-generation JavaScript module bundler"</p>
+
 					<p>
 					<pre><code data-trim >
+// From resources/assets/js/app.js to public/js/app.js
 elixir(function(mix) {
 	mix.rollup('app.js');
 });
@@ -249,12 +285,12 @@ elixir(function(mix) {
 
 
 				<section>
-					<h2>Working with Javascript</h2>
 
-					<h3>Browserify <small>Laravel 5.2</small></h3>
+					<h3>Browserify <small>(Laravel 5.2 docs)</small></h3>
 
 					<p>
 					<pre><code data-trim >
+// From resources/assets/js/app.js to public/js/app.js
 elixir(function(mix) {
 	mix.browserify('app.js');
 });
@@ -264,23 +300,24 @@ elixir(function(mix) {
 
 
 				<section>
-					<h2>Working with Javascript</h2>
 
 					<h3>Plain Scripts</h3>
 
 					<pre><code data-trim >
+// From resources/assets/js/products.js + dashboard.js to public/js/app.js
 elixir(function(mix) {
     mix.scripts([
-        'order.js',
-        'forum.js'
+        'products.js',
+        'dashboard.js'
     ]);
 });
 					</code></pre>
 
 					<p>Concatenazione dei .js contenuti in una cartella</p>
 <pre><code data-trim >
+// From resources/other-assets/js/*.js to public/js/app.js
 elixir(function(mix) {
-	mix.scriptsIn('public/js/some/directory');
+	mix.scriptsIn('resources/other-assets/js/');
 });
 	</code></pre>
 
@@ -288,227 +325,159 @@ elixir(function(mix) {
 
 
 
+<section>
+	<h2>Other Tasks</h2>
+
+	<h3>Copying Files &amp; Directories</h3>
 
 
-				<section>
-					<h2>Other Tasks</h2>
-				</section>
-
-
-
-				<section>
-					<h2>Come si utilizza?</h2>
-
-					<div class="fragment">
-						<p>
-							Esecuzione dei task
-						</p>
-						<pre><code data-trim >gulp</code></pre>
-					</div>
-					<br>
-					<div class="fragment">
-						<p>
-							Esecuzione di un singolo task (es: custom-task)
-						</p>
-						<pre><code data-trim >gulp custom-task</code></pre>
-					</div>
-					<br>
-					<div class="fragment">
-						<p>
-							Monitoraggio continuo e riesecuzione dei task
-						</p>
-						<pre><code data-trim >gulp watch</code></pre>
-					</div>
-
-				</section>
-
-				<section>
-					<h2>Come si utilizza?</h2>
-
-					<div class="fragment">
-						<p>
-							Solo compilazione css
-						</p>
-						<pre><code data-trim >gulp styles</code></pre>
-					</div>
-					<br>
-					<div class="fragment">
-						<p>
-							Solo compilazione scripts
-						</p>
-						<pre><code data-trim >gulp scripts</code></pre>
-					</div>
-					<br>
-					<div class="fragment">
-						<p>
-							Test Driven Development
-						</p>
-						<pre><code data-trim >gulp tdd</code></pre>
-					</div>
-
-				</section>
-
-				<section>
-					<h2>Task principali</h2>
-					<img src="img/waiting.gif" alt="">
-				</section>
-
-				<section>
-					<h2>Compilazione Css</h2>
-
-					<h3>Sass (con LibSass)</h3>
 <pre><code data-trim >
-// da /resources/assets/sass a /public/css/app.css
+//from vendor/foo/bar.css to public/css/bar.css
 elixir(function(mix) {
-	mix.sass('app.scss');
-});</code></pre>
-					<p>Si può usare anche RubySass ma installando i pacchetti necessari</p>
-
-
-					<h3>Less</h3>
-<pre><code data-trim >
-// da /resources/assets/less a /public/css/app.css
-elixir(function(mix) {
-	mix.less('app.less');
+    mix.copy('vendor/foo/bar.css', 'public/css/bar.css');
 });</code></pre>
 
-				</section>
 
-				<section>
-					<h2>Compilazione Js</h2>
-
-					<h3>CoffeScript</h3>
-					<pre><code data-trim >
-// da /resources/assets/coffee a /public/js/caffe.js
-mix.coffee(['caffe.coffee']);</code></pre>
-
-<h3>Browserify</h3>
 <pre><code data-trim >
-// inclusione di color (npm install color)
-elixir.config.js.browserify.transformers.push({
-    name: 'color',
-    options: {}
-});
-
-// da /resources/assets/js/main.js a /public/js/main.js
-mix.browserify('main.js');</code></pre>
+//from vendor/foo/ to public/css/
+elixir(function(mix) {
+    mix.copy('vendor/foo', 'public/css');
+});</code></pre>
 
 </section>
+
+
+
 				<section>
-					<h2>Compilazione Js</h2>
-<h3>Babel</h3>
+
+					<h3>Versioning / Cace busting</h3>
+
 <pre><code data-trim >
-//da /resources/assets/js/* a /public/js/all.js (come mix.script!)
-mix.babel([
-        'jsx-component.js',
-    ]);</code></pre>
+//In gulpfile.js
+elixir(function(mix) {
+    mix.version('css/all.css');
+});</code></pre>
+
+
+<pre><code data-trim >
+//in the blade view
+<link rel="stylesheet" href="{{ elixir('css/all.css') }}">
+</code></pre>
+
+
+<pre><code data-trim >
+//The resulting html
+<link rel="stylesheet" href="css/all-16d570a7.css">
+</code></pre>
 
 				</section>
 
-				<section>
-					<h2>Concatenazione</h2>
 
 
+<section>
+	<h3>BrowserSync</h3>
 
-<pre><code data-trim >
-//Compilazione da /resources/assets/css in /public/css/all.css
-mix.styles([
-	'module1.css',
-	'module2.css'
-]);</code></pre>
-
+	<p>Reload automatico delle risorse css/js e html alla modifica tramite gulp watch.</p>
 
 <pre><code data-trim >
-//Compilazione da /resources/assets/js in /public/js/all.js
-//(come mix.babel!)
-mix.scripts([
-	'module1.js',
-	'module2.js'
-]);</code></pre>
-
-					<p>
-						Si possono concatenare tutti i file di una directory o file
-						da diverse directory specificando le path.
-					</p>
-
-				</section>
-
-				<section>
-					<h2>Versioning/Hashing</h2>
-
-					<p>
-						Aggiunge un hash al filename come cache busting.
-					</p>
-<pre><code data-trim >mix.version('css/main.css'); // public/build/css/main-39d5f9a7.css
-mix.version('js/app.js'); // public/build/js/app-78efbae6.js</code></pre>
-					<p>
-						Nei template blade possiamo usare le funzioni di Elixir per recuperare il corretto filename versionato
-					</p>
-<pre><code data-trim ><link rel="stylesheet" href="{{ elixir('css/main.css') }}" />
-<script src="{{ elixir('js/main.js') }}"></script></code></pre>
-
-				</section>
-
-				<section>
-					<h2>Task personalizzati?</h2>
-					<p>
-						Certo! con Elixir si ha la possibilità di creare task personalizzati da eseguire.
-					</p>
-<pre><code data-trim >
-elixir.extend('logDate', function() {
-	gulp.task('date_logger', function() {
-	console.log(new Date());
-	});
-
-	// this.registerWatcher('date_logger', '/**/*.js');
-	return this.queueTask('date_logger');
+//with local developing on project.dev
+elixir(function(mix) {
+    mix.browserSync({
+        proxy: 'project.dev'
+    });
 });
+</code></pre>
 
-mix.logDate();
+</section>
+
+
+<section>
+	<h3>Calling gulp tasks</h3>
+
+<pre><code data-trim >
+elixir(function(mix) {
+    mix.task('deploy');
+});
+</code></pre>
+
+</section>
+
+				<section>
+					<h3>Custom Tasks</h3>
+
+<pre><code data-trim >
+var Task = Elixir.Task;
+
+Elixir.extend('speak', function(message) {
+
+    new Task('speak', function() {
+        return gulp.src('').pipe(shell('say ' + message));
+    });
+
+});
 </code></pre>
 				</section>
 
-				<section>
-					<h2>Let's practice!</h2>
-				</section>
+
+
+
+<section class="">
+	<h2>Considerations</h2>
+
+	<p>
+		<ul>
+			<li>
+				Gli elementi proposti da Elixir, ed Elixir stesso, sono suggerimenti di Laravel.
+			</li>
+			<li>
+				Nel caso di single page apps con un servizio API backend valutare l'utilizzo di Lumen (minimal Laravel).
+			</li>
+		</ul>
+	</p>
+
+</section>
+
+
 
 				<section>
-					<h2>Risorse utili</h2>
+					<h2>Resouces</h2>
 
 					<ul>
 						<li>
-							Best Gulp Plugins
-							<br>
-							<a target="_blank" href="https://github.com/Pestov/essential-gulp-plugins">
-							https://github.com/Pestov/essential-gulp-plugins
+							<a href="https://laravel.com/docs/master/elixir">
+								Elixir official page
 							</a>
 						</li>
-						<li>PostCss
-							<br><a target="_blank" href="http://postcss.parts/">http://postcss.parts/</a></li>
 						<li>
-							Elixir Live Reload <br>
-							<a target="_blank" href="https://www.npmjs.com/package/laravel-elixir-livereload">
-								https://www.npmjs.com/package/laravel-elixir-livereload
+							<a href="https://laracasts.com/series/whats-new-in-laravel-5-3/episodes/4">
+								Laracasts: The Laravel suggestion, Webpack + Vue
 							</a>
 						</li>
+						<li>
+							<a href="https://laracasts.com/series/laravel-5-and-the-front-end/episodes/8">
+								Laracasts: Elixir + Browserify + ES6 + React
+							</a>
+						</li>
+						<li>
+							<a href="https://laracasts.com/series/learning-vue-step-by-step">
+								Laracasts: Vue Series Lessons
+							</a>
+						</li>
+						<li>
+							<a href="https://laracasts.com/series/es6-cliffsnotes">
+								Laracasts: ES2015 Series Lessons
+							</a>
+						</li>
+
 					</ul>
 
+
 				</section>
 
-				<section>
-					<h2>
-						Thank you!
-					</h2>
 
-					<br>
-					<p>
-						<a target="_blank" href="https://github.com/nicolabosco87/">//github.com/nicolabosco87</a>
-						<br>
-						<a target="_blank" href="https://github.com/nicolabosco87/laravel-frontend-talk">GitHub - Practice</a>
-						<br>
-						<a target="_blank" href="https://github.com/nicolabosco87/laravel-frontend-talk-slides">GitHub - Slides</a>
-					</p>
-				</section>
+<section class="section--orange" data-background="#f4645f" >
+	<h2>Thank You!</h2>
+</section>
 
 			</div>
 
