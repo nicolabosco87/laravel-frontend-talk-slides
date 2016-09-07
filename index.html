@@ -49,7 +49,11 @@
 								<img width="150" style="border: none; box-shadow: none; " src="img/logo-fevr.png" alt="Fevr">
 							</div>
 
-							<small><a href="https://www.facebook.com/boschin87">Nicola Bosco</a></small>
+							<small>21 Sep 2016</small>
+&nbsp;
+						<small>
+								<a href="https://www.facebook.com/boschin87">Nicola Bosco</a>
+						</small>
 
 						</div>
 					</p>
@@ -155,16 +159,51 @@ elixir(mix => {
 					<h2>Execution</h2>
 
 					<p>
+						Singola esecuzione dei task
 						<pre><code>gulp</code></pre>
+					</p>
+
+					<p>
+						Singola esecuzione dei task per l'ambiente di produzione
 						<pre><code>gulp --production</code></pre>
+					</p>
+
+					<p>
+						Esecuzione dei task e refresh alla modifica degli assets
 						<pre><code>gulp watch</code></pre>
 					</p>
 				</section>
 
 				<section>
-					<h2>Esecuzione</h2>
 
-					immagine di riepilogo esecuzione task
+
+					<p>
+						Result details
+						<img src="img/gulp-result.jpg" alt="Gulp result">
+					</p>
+				</section>
+
+
+				<section>
+					<h2>Convention over Configuration</h2>
+
+					<p>
+						Laravel richiede una configurazione minima/assente per funzionare.
+					</p>
+					<p>
+						Per Elixir si consiglia di utilizzare le path di default utilizzate da Laravel.
+					</p>
+
+					<p>
+						Gli assets da compilare saranno in:
+						<pre><code>resouces/assets/</code></pre>
+					</p>
+
+					<p>
+						Gli assets compilati saranno in:
+					<pre><code>public/assets/</code></pre>
+					</p>
+
 				</section>
 
 
@@ -184,15 +223,33 @@ elixir(function(mix) {
 	mix.sass('app.scss');
 });</code></pre>
 
-					<p>Files multipli + destinazione css</p>
-<pre><code data-trim >
-// da /resources/assets/sass/.. a /public/another-css/multiple.css
-elixir(function(mix) {
-	mix.sass(['app.scss','fixes.scss'],'public/another-css/multiple.css');
-});</code></pre>
+
+					<p>
+						Di default vengono eseguiti l'autoprefixer, generati i source maps e minificato il codice
+						se si tratta di una compilazione per la produzione <pre><code>gulp --production</code></pre>
+					</p>
+
 				</section>
 
 
+				<section>
+					<h3>Sass - Opzioni</h3>
+
+					<p>Files multipli</p>
+					<pre><code data-trim >
+// da /resources/assets/sass/.. a /public/css/app.css
+elixir(function(mix) {
+	mix.sass(['app.scss','fixes.scss']);
+});</code></pre>
+
+					<p>Destinazione css custom</p>
+					<pre><code data-trim >
+// da /resources/assets/sass/app.scss a /public/another-css/multiple.css
+elixir(function(mix) {
+	mix.sass('app.scss','public/another-css/multiple.css');
+});</code></pre>
+
+				</section>
 
 
 				<section>
@@ -257,6 +314,11 @@ elixir(function(mix) {
 elixir(function(mix) {
     mix.webpack('app.js');
 });</code></pre>
+					</p>
+
+					<p>
+						Di default viene compilato ES2015 in ES5, generati i source maps e minificato il codice
+						se si tratta di una compilazione per la produzione <pre><code>gulp --production</code></pre>
 					</p>
 
 					<p>
@@ -350,7 +412,7 @@ elixir(function(mix) {
 
 				<section>
 
-					<h3>Versioning / Cace busting</h3>
+					<h3>Versioning / Cache busting</h3>
 
 <pre><code data-trim >
 //In gulpfile.js
@@ -380,7 +442,7 @@ elixir(function(mix) {
 	<p>Reload automatico delle risorse css/js e html alla modifica tramite gulp watch.</p>
 
 <pre><code data-trim >
-//with local developing on project.dev
+//with local development on project.dev
 elixir(function(mix) {
     mix.browserSync({
         proxy: 'project.dev'
@@ -430,6 +492,9 @@ Elixir.extend('speak', function(message) {
 				Gli elementi proposti da Elixir, ed Elixir stesso, sono suggerimenti di Laravel.
 			</li>
 			<li>
+				Probabilmente sono i backender a trarre più beneficio da Elixir.
+			</li>
+			<li>
 				Nel caso di single page apps con un servizio API backend valutare l'utilizzo di Lumen (minimal Laravel).
 			</li>
 		</ul>
@@ -476,7 +541,24 @@ Elixir.extend('speak', function(message) {
 
 
 <section class="section--orange" data-background="#f4645f" >
-	<h2>Thank You!</h2>
+	<h2>Thanks!</h2>
+
+	<p style="color: white;" >
+
+	<div style="border-radius:5px; background: #ffffff; display: flex; align-items: center; justify-content: center;" >
+		<div style="display: inline-block; margin-right: 15px; padding: 0 15px;" >
+			<img width="150" style="border: none; box-shadow: none; " src="img/logo-fevr.png" alt="Fevr">
+		</div>
+
+		<small>21 Sep 2016</small>
+		&nbsp;
+		<small>
+			<a href="https://www.facebook.com/boschin87">Nicola Bosco</a>
+		</small>
+
+	</div>
+	</p>
+
 </section>
 
 			</div>
