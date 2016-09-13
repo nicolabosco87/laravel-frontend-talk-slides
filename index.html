@@ -42,18 +42,19 @@
 			<div class="slides">
 				<section data-background="#f4645f" >
 					<h1 style="color: white;">Frontend with Laravel <br> <b>Elixir</b></h1>
-					<p style="color: white;" >
+					<p style="color: white; ">
 
-						<div style="border-radius:5px; background: #ffffff; display: flex; align-items: center; justify-content: center;" >
-							<div style="display: inline-block; margin-right: 15px; padding: 0 15px;" >
+						<div style="border-radius:5px; background: #ffffff; display: flex;
+						align-items: center; justify-content: center;" >
+							<div style="display: inline-block; margin: 0 15px; padding: 0 15px;" >
 								<img width="150" style="border: none; box-shadow: none; " src="img/logo-fevr.png" alt="Fevr">
 							</div>
 
-							<small>21 Sep 2016</small>
+							<div style="font-size: 26px; margin: 0 15px;">21 Sep 2016</div>
 &nbsp;
-						<small>
+						<div style="font-size: 26px; margin: 0 15px;" >
 								<a href="https://www.facebook.com/boschin87">Nicola Bosco</a>
-						</small>
+						</div>
 
 						</div>
 					</p>
@@ -91,15 +92,17 @@
 					<h2>A little Laravel overview</h2>
 
 					<ul>
-						<li>MVC framework with bundles (Packagist)</li>
-						<li>Expressive, intuitive syntax.</li>
-						<li>Eloquent ORM, Querybuilder, Migrations </li>
-						<li>Blade template engine + Elixir/Gulp task runner</li>
-						<li>Excellent Documentation and Laracast tutorials</li>
+						<li>MVC framework, basato su Composer</li>
+						<li>Sintassi espressiva e intuitiva.</li>
+						<li>RestFul routing</li>
+						<li>Eloquent ORM, Querybuilder, Migrations per versionamento Db</li>
+						<li>Blade template engine</li>
+						<li>Unit testing</li>
+						<li>Grande community, eccellente documentazione e tutorial video su Laracast</li>
 					</ul>
 
 					<p>
-						More info at <a href="http://www.laravel.com">www.laravel.com</a>
+						Info su <a href="http://www.laravel.com">www.laravel.com</a>
 					</p>
 
 				</section>
@@ -394,14 +397,14 @@ elixir(function(mix) {
 
 
 <pre><code data-trim >
-//from vendor/foo/bar.css to public/css/bar.css
+//File copy from vendor/foo/bar.css to public/css/bar.css
 elixir(function(mix) {
     mix.copy('vendor/foo/bar.css', 'public/css/bar.css');
 });</code></pre>
 
 
 <pre><code data-trim >
-//from vendor/foo/ to public/css/
+//Directory copy from vendor/foo/ to public/css/
 elixir(function(mix) {
     mix.copy('vendor/foo', 'public/css');
 });</code></pre>
@@ -422,7 +425,7 @@ elixir(function(mix) {
 
 
 <pre><code data-trim >
-//in the blade view
+//In the blade view
 <link rel="stylesheet" href="{{ elixir('css/all.css') }}">
 </code></pre>
 
@@ -439,13 +442,13 @@ elixir(function(mix) {
 <section>
 	<h3>BrowserSync</h3>
 
-	<p>Reload automatico delle risorse css/js e html alla modifica tramite gulp watch.</p>
+	<p>Refresh automatico del browser alla modifica degli assets tramite gulp watch.</p>
 
 <pre><code data-trim >
 //with local development on project.dev
 elixir(function(mix) {
     mix.browserSync({
-        proxy: 'project.dev'
+        proxy: 'project.dev' //Local Url of your application
     });
 });
 </code></pre>
@@ -477,10 +480,34 @@ Elixir.extend('speak', function(message) {
     });
 
 });
+
+elixir(function(mix) {
+	mix.speak('Hello World');
+}
 </code></pre>
 				</section>
 
 
+				<section>
+					<h3>Custom Tasks</h3>
+
+					<pre><code data-trim >
+var Task = Elixir.Task;
+
+Elixir.extend('speak', function(message) {
+
+    new Task('speak', function() {
+        return gulp.src('').pipe(shell('say ' + message));
+    })
+	.watch('./app/**'); //With watcher on gulp watch
+
+});
+
+elixir(function(mix) {
+	mix.speak('Hello World');
+}
+</code></pre>
+				</section>
 
 
 <section class="">
