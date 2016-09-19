@@ -269,6 +269,7 @@ elixir(mix => {
 					</p>
 				</section>
 
+<!--
 
 				<section>
 					<h2>Convention over Configuration</h2>
@@ -291,6 +292,7 @@ elixir(mix => {
 					</p>
 
 				</section>
+-->
 
 
 				<section data-background="#f4645f" >
@@ -309,14 +311,22 @@ elixir(function(mix) {
 	mix.sass('app.scss');
 });</code></pre>
 
-
 					<p>
-						Di default vengono eseguiti l'autoprefixer, generati i source maps e minificato il codice
-						se si tratta di una compilazione per la produzione <pre><code>gulp --production</code></pre>
+						Di default Elixir legge gli assets da <pre><code>/resources/assets/[TYPE]/</code></pre>
+						e salva in <pre><code>/public/[TYPE]/</code></pre>
 					</p>
 
 				</section>
 
+				<section>
+					<h3>Sass</h3>
+
+					<p>
+						Vengono eseguiti l'autoprefixer, generati i source maps e minificato il codice
+						se si tratta di una compilazione per la produzione <pre><code>gulp --production</code></pre>
+					</p>
+
+				</section>
 
 				<section>
 					<h3>Sass - Opzioni</h3>
