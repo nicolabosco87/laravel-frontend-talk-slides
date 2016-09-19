@@ -94,16 +94,99 @@
 					<ul>
 						<li>MVC framework, basato su Composer</li>
 						<li>Sintassi espressiva e intuitiva.</li>
-						<li>RestFul routing</li>
+						<li>RestFul routing (VERB)</li>
 						<li>Eloquent ORM, Querybuilder, Migrations per versionamento Db</li>
 						<li>Blade template engine</li>
-						<li>Unit testing</li>
+						<li>Unit testing con PHPUnit</li>
 						<li>Grande community, eccellente documentazione e tutorial video su Laracast</li>
 					</ul>
 
-					<p>
-						Info su <a href="http://www.laravel.com">www.laravel.com</a>
-					</p>
+				</section>
+
+				<section>
+					<h2>Blade template engine</h2>
+
+					<h3>
+						Layouts + Sections
+					</h3>
+
+					<pre><code>
+<!-- Stored in resources/views/layouts/app.blade.php -->
+<h1>App Name - @yield('title')</h1>
+@section('sidebar')
+	This is the master sidebar.
+@show
+<div class="container">
+	@yield('content')
+</div>
+</code></pre>
+
+				</section>
+
+				<section>
+					<h3>Extending a layout</h3>
+
+					<pre><code>
+<!-- Stored in resources/views/child.blade.php -->
+@extends('layouts.app')
+
+@section('title', 'Page Title')
+
+@section('sidebar')
+    @parent
+    <p>This is appended to the master sidebar.</p>
+@endsection
+
+					</code></pre>
+
+				</section>
+
+				<section>
+					<h3>Control structures (If, Loops)</h3>
+
+					<pre><code>
+@if (count($records) >= 1)
+    I have records!
+@else
+    I don't have any records!
+@endif
+					</code></pre>
+
+							<pre><code>
+@foreach ($users as $user)
+    <p>This is user {{ $user->id }}</p>
+@endforeach
+							</code></pre>
+													</section>
+
+
+				<section>
+<h3>Service Injection</h3>
+
+<pre><code>
+@inject('metrics', 'App\Services\MetricsService')
+
+<div>
+    Monthly Revenue: {{ $metrics->monthlyRevenue() }}.
+</div>
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>Bypass for Javascript Frameworks</h3>
+
+<pre><code>
+Hello, @{{ name }}.
+
+</code></pre>
+
+					<pre><code>
+@verbatim
+    <div class="container">
+        Hello, {{ name }}.
+    </div>
+@endverbatim
+					</code></pre>
 
 				</section>
 
@@ -247,9 +330,9 @@ elixir(function(mix) {
 
 					<p>Destinazione css custom</p>
 					<pre><code data-trim >
-// da /resources/assets/sass/app.scss a /public/another-css/multiple.css
+// da /resources/assets/sass/app.scss a /public/another-css/another-app.css
 elixir(function(mix) {
-	mix.sass('app.scss','public/another-css/multiple.css');
+	mix.sass('app.scss','public/another-css/another-app.css');
 });</code></pre>
 
 				</section>
@@ -346,6 +429,11 @@ elixir(function(mix) {
 });
 </code></pre>
 					</p>
+
+					<p>
+						Si può utilizzare il rollup.config.js per configurare Rollup.
+					</p>
+
 				</section>
 
 
@@ -466,27 +554,6 @@ elixir(function(mix) {
 </code></pre>
 
 </section>
-
-				<section>
-					<h3>Custom Tasks</h3>
-
-<pre><code data-trim >
-var Task = Elixir.Task;
-
-Elixir.extend('speak', function(message) {
-
-    new Task('speak', function() {
-        return gulp.src('').pipe(shell('say ' + message));
-    });
-
-});
-
-elixir(function(mix) {
-	mix.speak('Hello World');
-}
-</code></pre>
-				</section>
-
 
 				<section>
 					<h3>Custom Tasks</h3>
