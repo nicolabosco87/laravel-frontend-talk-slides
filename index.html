@@ -164,10 +164,10 @@
 <h3>Service Injection</h3>
 
 <pre><code>
-@inject('metrics', 'App\Services\MetricsService')
+@inject('products', 'App\Services\ProductsService')
 
 <div>
-    Monthly Revenue: {{ $metrics->monthlyRevenue() }}.
+    Number of products: {{ $products->countProducts() }}.
 </div>
 					</code></pre>
 				</section>
@@ -233,6 +233,7 @@ require('laravel-elixir-vue');
 */
 
 elixir(mix => {
+	//here goes the code
 	mix.sass('app.scss')
 	.webpack('app.js');
 });
@@ -266,6 +267,18 @@ elixir(mix => {
 					<p>
 						Result details
 						<img src="img/gulp-result.jpg" alt="Gulp result">
+					</p>
+				</section>
+
+
+				<section>
+					<h3>Default paths</h3>
+
+					<p>
+						Di default Elixir legge gli assets sorgenti da:
+					<pre><code>/resources/assets/[TYPE]/ 	//es: /resources/assets/sass/app.scss</code></pre>
+
+					 Destinazione di default: <pre><code>/public/[TYPE]/ 		//es: /public/css/app.css </code></pre>
 					</p>
 				</section>
 
@@ -311,10 +324,7 @@ elixir(function(mix) {
 	mix.sass('app.scss');
 });</code></pre>
 
-					<p>
-						Di default Elixir legge gli assets da <pre><code>/resources/assets/[TYPE]/</code></pre>
-						e salva in <pre><code>/public/[TYPE]/</code></pre>
-					</p>
+
 
 				</section>
 
@@ -580,10 +590,15 @@ Elixir.extend('speak', function(message) {
 
 });
 
+
+</code></pre>
+
+					<pre><code>
 elixir(function(mix) {
 	mix.speak('Hello World');
 }
-</code></pre>
+					</code></pre>
+
 				</section>
 
 
@@ -593,7 +608,7 @@ elixir(function(mix) {
 	<p>
 		<ul>
 			<li>
-				Gli elementi proposti da Elixir, ed Elixir stesso, sono suggerimenti di Laravel.
+				I task proposti da Elixir, ed Elixir stesso, sono suggerimenti di Laravel.
 			</li>
 			<li>
 				Probabilmente sono i backender a trarre più beneficio da Elixir.
